@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0")
+  body
+    div#messageBar
+
+    a(href="/")
+      h1=title 
+    h2=subtitle 
+    br
+    block content
+
+    script(type="module", src="/public/javascripts/messageBar.js" async) 
+    script(type="module", src="/public/javascripts/web-components.js" async)

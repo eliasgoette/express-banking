@@ -1,0 +1,32 @@
+extends layout 
+
+block content 
+        app-accordion#accountsAccordion
+            app-accordion-item(title="New account")
+
+                div 
+                    form#newAccForm(action="/API/create-account", method="POST")
+                        div 
+                            label(for="owner") Owner*
+                            input#newAccOwnerInput(type="text", name="owner", placeholder="Mr. J. Doe", required)
+                        div 
+                            label(for="initialBalance") Initial Balance
+                            input#newAccInitialBalanceInput(type="number", name="initialBalance",step="0.01", placeholder="199.99") 
+                        div 
+                            label(for="currency") Currency
+                            select#newAccCurrencyInput(name="currency") 
+                                option(value="USD", selected) USD
+                                option(value="EUR") EUR
+                                option(value="CHF") CHF
+
+                        div
+                            label(for="iban") IBAN
+                            input#newAccIBANInput(type="text", name="iban", placeholder="US323132342433")
+                        div 
+                            label(for="name") Name
+                            input#newAccNameInput(type="text", name="name", placeholder="Rental savings")
+
+                        div 
+                            button(type="submit") Create
+
+        script(type="module", src="/public/javascripts/viewAccount.js", async) 

@@ -1,0 +1,27 @@
+extends layout
+
+block content 
+    form#signinForm(action="/submit-signin", method="POST") 
+        section#newAccount
+            h3 Create Account 
+            label(for="newAccountEmailAddress") Email address: 
+            input#newAccountEmailAddressInput(type="email", name="newAccountEmailAddress", placeholder="jane.doe@yourmail.com")
+            label(for="newAccountPassword") Password: 
+            input#newAccountPasswordInput(type="password", name="newAccountPassword", placeholder="Strong password")
+            label(for="newAccountRepeatPassword") Repeat Password: 
+            input#newAccountRepeatPasswordInput(type="password", name="newAccountRepeatPassword", placeholder="Strong password")
+            
+            button#newAccountSigninButton(type="submit") Join now
+            a(href="/signin#existingAccount") Already have an account? Sign in here 
+
+        section#existingAccount
+            h3 Sign In
+            label(for="existingAccountEmailAddress") Email address: 
+            input#emailAddressInput(type="email", name="existingAccountEmailAddress", placeholder="jane.doe@yourmail.com")
+            label(for="existingAccountPassword") Password: 
+            input#existingAccountPasswordInput(type="password", name="existingAccountPassword", placeholder="Strong password")
+
+            button#existingAccountSigninButton(type="submit") Sign in
+            a(href="/signin#newAccount") Don't have an account yet? Join here 
+
+        script(type="module", src="/public/javascripts/updateSigninView.js") 
